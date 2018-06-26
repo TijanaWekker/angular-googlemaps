@@ -2,15 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {} from '@types/googlemaps';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-google-map',
+  templateUrl: './google-map.component.html'
 })
-export class AppComponent {
+export class GoogleMapComponent implements OnInit {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
-  latitude: number;
-  longitude: number;
 
   ngOnInit() {
     const mapProp = {
@@ -23,9 +20,5 @@ export class AppComponent {
 
   setMapType(mapTypeId: string) {
     this.map.setMapTypeId(mapTypeId);
-  }
-  setCenter(e: any) {
-    e.preventDefault();
-    this.map.setCenter(new google.maps.LatLng(this.latitude, this.longitude));
   }
 }
