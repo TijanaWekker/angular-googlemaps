@@ -1,16 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {} from '@types/googlemaps';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
   latitude: number;
   longitude: number;
+
+  title: string;
+  lat: number;
+  lng: number;
 
   ngOnInit() {
     const mapProp = {

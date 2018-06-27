@@ -4,6 +4,10 @@
     Welcome to Google Maps!
   </h1>
 
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+
   <div #gmap ng-style=”lenght:100px,;height:400px”></div>
 
   <div class="col-md-3 col-sm-12 col-xs-12">
